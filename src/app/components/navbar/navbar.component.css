@@ -12,16 +12,21 @@
     border-radius: 2em;
     background: #F0F0F0;
     border: none;
-    padding: 7px;
 }
 .input{
     border: none;
     background: #F0F0F0;
-    padding-left: 8px;
-    /* background: #e6e6e6; */
+    width: 88%;
+    padding: 25px 20px 25px 8px;
 }
 
 .icon{
     color:#767676;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
+}
+.container1:hover{
+    background: #E1E1E1;
+}
+.input:hover{
+    background: #E1E1E1;
 }
