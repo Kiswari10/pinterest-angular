@@ -11,6 +11,6 @@ export class UnsplashService {
   constructor( private http: HttpClient ) { }
 
   getPhotos() {
-    return this.http.get(`${this.url}photos?page=1&per_page=20&client_id=tOoD8N49YdY2HrKYAlMcWLbam4IeRJeD2-VL4TdGUD4`);
+    return this.http.get(`${this.url}photos?page=1&per_page=20`);
   }
 }
