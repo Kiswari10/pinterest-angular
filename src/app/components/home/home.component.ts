@@ -8,10 +8,13 @@ import { UnsplashService } from '../../services/unsplash.service';
 })
 export class HomeComponent implements OnInit {
 
+  photos: Array<any> = [];
+
   constructor( private unsplashService: UnsplashService) {
     this.unsplashService.getPhotos()
-    .subscribe((data) => {
-      console.log(data);
+    .subscribe((data: any) => {
+      this.photos = data;
+      console.log(this.photos);
     });
    }
 

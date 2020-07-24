@@ -1,3 +1,5 @@
-<div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
+<div class="box-container">
+    <div class="" *ngFor="let photo of photos">
+      <img [src]="photo.urls.small" class="card-img-top" alt="...">
+    </div>
 </div>
