@@ -13,4 +13,7 @@ export class UnsplashService {
   getPhotos() {
     return this.http.get(`${this.url}photos?page=1&per_page=20`);
   }
+  getPhotosById(id) {
+    return this.http.get(`${this.url}photos/${id}`);
+  }
 }
