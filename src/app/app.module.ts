@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UnsplashInterceptor } from './interceptors/unsplash.interceptor';
+import { ImagePipe } from './pipes/image.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { UnsplashInterceptor } from './interceptors/unsplash.interceptor';
     HomeComponent,
     CardComponent,
     NavbarComponent,
+    ImagePipe,
   ],
   imports: [
     BrowserModule,

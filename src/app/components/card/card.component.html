@@ -1,5 +1,5 @@
 <div class="card-photo" *ngFor="let photo of photos" data-toggle="modal" data-target="#onePhoto">
-    <img [src]="photo.urls.small" class="card-img-top img" alt="..." [id]="photo.id" (click)="getId($event)">
+    <img [src]="photo.urls.small" class="card-img-top img" alt="..." [id]="photo.id" (click)="getId(photo.id)">
 </div>
 
 <!-- Modal -->
@@ -12,7 +12,9 @@
           </button>
         </div>
         <div class="modal-body">
-           <!--  <img [src]="photo.urls.small" class="card-img-top img" alt="..." [id]="photo.id" (click)="getId($event)"> -->
+            <img [src]="dataPhoto | image" class="card-img-top img" alt="...">
+            <p>{{dataPhoto.likes}}</p>
+            <!-- <p>{{dataPhoto["urls"].small}}</p> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

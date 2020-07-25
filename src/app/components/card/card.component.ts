@@ -8,6 +8,8 @@ import { UnsplashService } from '../../services/unsplash.service';
 })
 export class CardComponent implements OnInit {
 
+  dataPhoto: any = {};
+
   @Input() photos: Array<any>;
 
   constructor(
@@ -16,13 +18,15 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getId(event){
-    console.log(event.target.id);
-    this.getPhotoById(event.target.id);
+  getId(id){
+    console.log(id);
+    this.getPhotoById(id);
   }
   getPhotoById(id){
     this.unsplashService.getPhotosById(id)
-    .subscribe((data) => {
+    .subscribe((data: any) => {
+      this.dataPhoto = data;
+      console.log(data.urls.small);
       console.log(data);
     });
   }
