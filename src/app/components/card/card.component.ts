@@ -13,5 +13,8 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  getId(event){
+    console.log(event.target.id);
+  }
 
 }

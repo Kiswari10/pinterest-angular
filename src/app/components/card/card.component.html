@@ -1,3 +1,24 @@
-<div class="card-photo" *ngFor="let photo of photos">
-    <img [src]="photo.urls.small" class="card-img-top img" alt="...">
+<div class="card-photo" *ngFor="let photo of photos" data-toggle="modal" data-target="#onePhoto">
+    <img [src]="photo.urls.small" class="card-img-top img" alt="..." [id]="photo.id" (click)="getId($event)">
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="onePhoto" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="onePhotoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="onePhotoLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
