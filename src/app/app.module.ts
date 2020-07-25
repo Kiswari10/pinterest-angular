@@ -8,6 +8,7 @@ import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UnsplashInterceptor } from './interceptors/unsplash.interceptor';
 import { ImagePipe } from './pipes/image.pipe';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ImagePipe } from './pipes/image.pipe';
     CardComponent,
     NavbarComponent,
     ImagePipe,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
