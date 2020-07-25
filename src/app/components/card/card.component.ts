@@ -9,6 +9,7 @@ import { UnsplashService } from '../../services/unsplash.service';
 export class CardComponent implements OnInit {
 
   dataPhoto: any = {};
+  condition = false;
 
   @Input() photos: Array<any>;
 
@@ -18,11 +19,9 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getId(id){
+  getPhoto(id){
     console.log(id);
-    this.getPhotoById(id);
-  }
-  getPhotoById(id){
+    this.condition = true;
     this.unsplashService.getPhotosById(id)
     .subscribe((data: any) => {
       this.dataPhoto = data;

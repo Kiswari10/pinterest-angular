@@ -1,7 +1,9 @@
 <div class="card-photo" *ngFor="let photo of photos" data-toggle="modal" data-target="#onePhoto">
-    <img [src]="photo.urls.small" class="card-img-top img" alt="..." [id]="photo.id" (click)="getId(photo.id)">
+    <img [src]="photo.urls.small" class="card-img-top img" alt="..." [id]="photo.id" (click)="getPhoto(photo.id)">
 </div>
 
 <!-- Modal -->
-<app-modal class="modal fade" id="onePhoto" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="onePhotoLabel" aria-hidden="true" [dataPhoto]="dataPhoto">
+<div *ngIf="condition">
+  <app-modal class="modal fade" id="onePhoto" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="onePhotoLabel" aria-hidden="true" [dataPhoto]="dataPhoto">
   </app-modal>
+</div>
