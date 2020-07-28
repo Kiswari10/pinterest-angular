@@ -1,19 +1,31 @@
 <div>
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <img [src]="dataPhoto.urls.small" class="card-img-top img" alt="...">
-            <p>{{dataPhoto.likes}}</p>
-            <!-- <p>{{dataPhoto["urls"].small}}</p> -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content img">
+        <div class="modal-body row">
+          <div class="col-6 media">
+            <img [src]="dataPhoto.urls.small" class="card-img-top img align-self-center" alt="...">
+          </div>
+            <div class="col-6">
+                <div class="mb-4 mr-2">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div>
+                  <h3 class="font-weight-bold text-center">{{ dataPhoto.description}}</h3>
+                </div>
+                <div>
+                  <p>Likes {{dataPhoto.likes}}</p>
+                </div>
+                <div>
+                  <p>Views {{dataPhoto.views}}</p>
+                </div>
+                <div class="footer">
+                  <p>Subido por
+                    <img [src]="dataPhoto.user.profile_image.small" class="rounded-circle" alt="...">
+                     {{dataPhoto.user.name}}</p>
+                </div>
+            </div>
         </div>
       </div>
     </div>
