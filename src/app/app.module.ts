@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,7 +22,8 @@ import { ModalComponent } from './components/modal/modal.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: UnsplashInterceptor, multi: true
