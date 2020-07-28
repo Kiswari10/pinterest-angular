@@ -14,12 +14,28 @@
                 <div>
                   <h3 class="font-weight-bold text-center">{{ dataPhoto.description}}</h3>
                 </div>
-                <div>
-                  <p>Likes {{dataPhoto.likes}}</p>
+                <div class="row pb-2">
+                  <div class="col">
+                    <p> <i class="fas fa-heart"></i>
+                    {{dataPhoto.likes}}</p>
+                  </div>
+                  <div class="col">
+                    <p> <i class="fas fa-eye"></i>
+                       {{dataPhoto.views}}</p>
+                  </div>
+                  <div class="col">
+                    <p> <i class="fas fa-cloud-download-alt"></i>
+                       {{dataPhoto.downloads}}</p>
+                  </div>
                 </div>
                 <div>
-                  <p>Views {{dataPhoto.views}}</p>
+                  <a [href]="dataPhoto.links.download" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-download"></i> Descargar imagen
+                  </a>
                 </div>
+                <br>
+                <br>
+                <br>
                 <div class="footer">
                   <p>Subido por
                     <img [src]="dataPhoto.user.profile_image.small" class="rounded-circle" alt="...">
