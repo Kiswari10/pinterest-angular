@@ -7,11 +7,12 @@ import { UnsplashService } from '../../services/unsplash.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  page = 1;
 
   photos: Array<any> = [];
 
   constructor( private unsplashService: UnsplashService) {
-    this.unsplashService.getPhotos()
+    this.unsplashService.getPhotos(this.page)
     .subscribe((data: any) => {
       this.photos = data;
       console.log(this.photos);
@@ -19,6 +20,17 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+  onScroll(){
+    this.page++;
+    console.log('scrolled');
+    this.unsplashService.getPhotos(this.page)
+    .subscribe((data: any) => {
+      data.forEach((elem) => {
+        this.photos.push(elem);
+      });
+      console.log(this.photos);
+    });
   }
 
 }

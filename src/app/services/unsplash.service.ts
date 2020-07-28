@@ -10,8 +10,8 @@ export class UnsplashService {
 
   constructor( private http: HttpClient ) { }
 
-  getPhotos() {
-    return this.http.get(`${this.url}photos?page=1&per_page=20`);
+  getPhotos(page = 1 ) {
+    return this.http.get(`${this.url}photos?page=${page}&per_page=20`);
   }
   getPhotosById(id) {
     return this.http.get(`${this.url}photos/${id}`);

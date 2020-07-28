@@ -1,3 +1,3 @@
-<div class="box-container fadeIn">
+<div class="box-container fadeIn" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
     <app-card [photos] = "photos"></app-card>
 </div>
