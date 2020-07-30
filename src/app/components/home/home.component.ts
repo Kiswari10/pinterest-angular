@@ -25,15 +25,26 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   onScroll(){
+    console.log('query', this.query);
     this.page++;
     console.log('scrolled');
-    this.unsplashService.getPhotos(this.page)
+    if (this.query === '') {
+      this.unsplashService.getPhotos(this.page)
     .subscribe((data: any) => {
       data.forEach((elem) => {
         this.photos.push(elem);
       });
       console.log(this.photos);
     });
+    } else {
+      this.unsplashService.search(this.query, this.page)
+    .subscribe((data2: any) => {
+      data2.results.forEach((elem) => {
+        this.photos.push(elem);
+      });
+      console.log(this.photos);
+    });
+    }
   }
   showData(){
     this.unsplashService.query$
