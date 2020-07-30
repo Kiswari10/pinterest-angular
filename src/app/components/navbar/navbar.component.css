@@ -30,12 +30,12 @@
 .input:hover{
     background: #E1E1E1;
 }
-.inicio{
+.start-box{
     color: white;
     background-color: black;
     border-radius: 1.5em;
     cursor: pointer;
 }
-.inicio-w{
+.start-nav{
     margin: 12px 15px 11px 15px; 
 }
