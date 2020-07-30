@@ -14,27 +14,19 @@ export class HomeComponent implements OnInit {
   query: string;
 
   constructor( private unsplashService: UnsplashService) {
-    /* this.unsplashService.getPhotos(this.page)
-    .subscribe((data: any) => {
-      this.photos = data;
-      console.log(this.photos);
-    }); */
     this.showData();
    }
 
   ngOnInit(): void {
   }
   onScroll(){
-    console.log('query', this.query);
     this.page++;
-    console.log('scrolled');
     if (this.query === '') {
       this.unsplashService.getPhotos(this.page)
     .subscribe((data: any) => {
       data.forEach((elem) => {
         this.photos.push(elem);
       });
-      console.log(this.photos);
     });
     } else {
       this.unsplashService.search(this.query, this.page)
@@ -42,7 +34,6 @@ export class HomeComponent implements OnInit {
       data2.results.forEach((elem) => {
         this.photos.push(elem);
       });
-      console.log(this.photos);
     });
     }
   }
@@ -58,14 +49,11 @@ export class HomeComponent implements OnInit {
       this.unsplashService.getPhotos(this.page)
     .subscribe((data: any) => {
       this.photos = data;
-      console.log(this.photos);
     });
     } else {
       this.unsplashService.search(this.query)
       .subscribe((data2: any) => {
         this.photos = data2.results;
-        console.log('q trae la busqueda', data2);
-        console.log(this.query);
       });
     }
   }
