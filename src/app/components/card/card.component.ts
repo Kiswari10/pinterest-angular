@@ -24,6 +24,7 @@ export class CardComponent implements OnInit {
     this.condition = true;
     this.unsplashService.getPhotosById(id)
     .subscribe((data: any) => {
+      /* this.condition = true; */
       this.dataPhoto = data;
       console.log(data.urls.small);
       console.log(data);
