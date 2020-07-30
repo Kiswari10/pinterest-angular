@@ -30,3 +30,12 @@
 .input:hover{
     background: #E1E1E1;
 }
+.inicio{
+    color: white;
+    background-color: black;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+.inicio-w{
+    margin: 12px 15px 11px 15px; 
+}
