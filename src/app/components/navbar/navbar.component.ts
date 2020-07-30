@@ -17,4 +17,7 @@ export class NavbarComponent implements OnInit {
     this.unsplashservice.getData(value);
     event.target.value = '';
   }
+  reset(){
+    this.unsplashservice.getData('');
+  }
 }
