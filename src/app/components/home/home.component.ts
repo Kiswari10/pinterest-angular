@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UnsplashService } from '../../services/unsplash.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,9 @@ export class HomeComponent implements OnInit {
 
   query: string;
 
-  constructor( private unsplashService: UnsplashService) {
+  constructor( private unsplashService: UnsplashService,
+               private spinner: NgxSpinnerService) {
+    this.spinner.show();
     this.showData();
    }
 
@@ -49,11 +52,14 @@ export class HomeComponent implements OnInit {
       this.unsplashService.getPhotos(this.page)
     .subscribe((data: any) => {
       this.photos = data;
+      this.spinner.hide();
     });
     } else {
+      this.spinner.show();
       this.unsplashService.search(this.query)
       .subscribe((data2: any) => {
         this.photos = data2.results;
+        this.spinner.hide();
       });
     }
   }
