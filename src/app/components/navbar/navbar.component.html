@@ -2,8 +2,8 @@
     <a class="navbar-brand" href="#">
         <img src="../../../assets/pinterest.svg" width="25" height="25" alt="" loading="lazy">
       </a>
-    <form class="form-inline container1">
+    <div class="form-inline container1">
         <span class="icon"><i class="fas fa-search"></i></span>
-        <input class="form-control input" type="search" placeholder="Buscar" aria-label="Search">
-    </form>
+        <input class="form-control input" (keyup.enter)="getValue($event)" placeholder="Buscar" aria-label="Search">
+    </div>
   </nav>

@@ -11,12 +11,15 @@ export class HomeComponent implements OnInit {
 
   photos: Array<any> = [];
 
+  query: string;
+
   constructor( private unsplashService: UnsplashService) {
-    this.unsplashService.getPhotos(this.page)
+    /* this.unsplashService.getPhotos(this.page)
     .subscribe((data: any) => {
       this.photos = data;
       console.log(this.photos);
-    });
+    }); */
+    this.showData();
    }
 
   ngOnInit(): void {
@@ -31,6 +34,29 @@ export class HomeComponent implements OnInit {
       });
       console.log(this.photos);
     });
+  }
+  showData(){
+    this.unsplashService.query$
+    .subscribe((msg) => {
+      this.query = msg;
+      this.getCollection();
+    });
+  }
+  getCollection(){
+    if (this.query === '') {
+      this.unsplashService.getPhotos(this.page)
+    .subscribe((data: any) => {
+      this.photos = data;
+      console.log(this.photos);
+    });
+    } else {
+      this.unsplashService.search(this.query)
+      .subscribe((data2: any) => {
+        this.photos = data2.results;
+        console.log('q trae la busqueda', data2);
+        console.log(this.query);
+      });
+    }
   }
 
 }

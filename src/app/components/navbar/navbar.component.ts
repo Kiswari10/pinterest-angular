@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UnsplashService } from '../../services/unsplash.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor( private unsplashservice: UnsplashService) { }
 
   ngOnInit(): void {
   }
-
+  getValue(event){
+    const value = event.target.value;
+    this.unsplashservice.getData(value);
+    event.target.value = '';
+  }
 }
