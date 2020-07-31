@@ -11,25 +11,23 @@
     margin-left: 1rem;
     border-radius: 2em;
     background: #F0F0F0;
-    border: none;
 }
 .input{
-    border: none;
+    width: 100%;
     background: #F0F0F0;
-    width: 88%;
-    padding: 25px 20px 25px 8px;
+    border: none;
+    padding: 15px 0px 15px 45px;
+    border-radius: 2em;
 }
-
 .icon{
     color:#767676;
     margin-left: 1rem;
+    position: absolute;
 }
-.container1:hover{
+.input:hover, .input:focus, .input:active{
+    outline:none;
     background: #E1E1E1;
-}
-.input:hover{
-    background: #E1E1E1;
-}
+  }
 .start-box{
     color: white;
     background-color: black;
